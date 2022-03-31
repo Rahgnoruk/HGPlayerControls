@@ -1,0 +1,5 @@
+Haciendo que el comportameinto sean ScriptableObjects puedes inyectar ese comportamiento donde sea.
+Se puede hacer el Strategy Pattern con interfaces implementadas por los ScriptableObjects y asignandolos en el inspector
+Ademas, el comportamiento puede cambiar a partir de las variables asignadas en la instancia del ScriptableObjects. Asi se 
+puede hacer algo como meter el codigo que crea mapas aleatorios en ScritpableObject y poner valores diferentes en 
+diferentes instancias.

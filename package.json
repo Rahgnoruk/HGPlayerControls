@@ -1,0 +1,33 @@
+{
+    "name": "com.hypergnosys.player-controls",
+    "version": "1.0.0",
+    "displayName": "HGPlayerControls",
+    "description": "All the tools necesary for the player to control his character's movement and inputs",
+    "unity": "2020.3",
+    "unityRelease": "11f1",
+    "documentationUrl": "https://github.com/Rahgnoruk/HGPlayerControls",
+    "changelogUrl": "https://github.com/Rahgnoruk/HGPlayerControls",
+    "licensesUrl": "https://github.com/Rahgnoruk/HGPlayerControls",
+    "keywords": [
+      "HyperGnosys",
+      "Character Controllers",
+      "Player Controller",
+      "Input System",
+      "New Input System",
+      "Unity Input System",
+      "Rigidbody Character Controller",
+      "FPS Controller"
+    ],
+    "author": {
+      "name": "Sergio Raimond",
+      "email": "sergio.raimond@hypergnosys.com",
+      "url": "https://www.hypergnosys.com"
+    },
+    "dependencies": {
+      "com.unity.inputsystem": "1.0.2",
+      "com.unity.cinemachine": "2.6.11"
+    },
+    "gitDependencies": {
+      "com.hypergnosys.core" : "https://github.com/Rahgnoruk/HGCodeBaseCore.git"
+    }
+  }

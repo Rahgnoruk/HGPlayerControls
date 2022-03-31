@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6bb33a7fa6c7e74ba41d85ce120394e, type: 3}
+  m_Name: Custom Gravity Jump
+  m_EditorClassIdentifier: 
+  jumpHeight:
+    debugExternalizableTaggedProperty: 0
+    useExternalProperty: 1
+    localProperty:
+      name: 
+      property:
+        value: 0
+        onValueChanged:
+          debugGameEvent: 0
+          onEventRaised:
+            m_PersistentCalls:
+              m_Calls: []
+    propertyInGroup:
+      propertyGroup:
+        referenceObject: {fileID: 11400000, guid: 73fe6c8728c6be044ad528589467b0cd, type: 2}
+      tag: {fileID: 11400000, guid: 6d1c0da0936714e42ad9c3616fb2c86b, type: 2}
+      propertyPreview:
+        tag: {fileID: 11400000, guid: 6d1c0da0936714e42ad9c3616fb2c86b, type: 2}
+        property:
+          value: 2
+          onValueChanged:
+            debugGameEvent: 0
+            onEventRaised:
+              m_PersistentCalls:
+                m_Calls: []
+  customGravity:
+    debugExternalizableTaggedProperty: 0
+    useExternalProperty: 0
+    localProperty:
+      name: Custom Gravity
+      property:
+        value: 10
+        onValueChanged:
+          debugGameEvent: 0
+          onEventRaised:
+            m_PersistentCalls:
+              m_Calls: []
+    propertyInGroup:
+      propertyGroup:
+        referenceObject: {fileID: 0}
+      tag: {fileID: 0}
+      propertyPreview:
+        tag: {fileID: 0}
+        property:
+          value: 0
+          onValueChanged:
+            debugGameEvent: 0
+            onEventRaised:
+              m_PersistentCalls:
+                m_Calls: []
