@@ -314,6 +314,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9196101647671839274}
   - component: {fileID: 7128377710976128423}
+  - component: {fileID: 5654680034324445335}
   m_Layer: 0
   m_Name: Move
   m_TagString: Untagged
@@ -344,17 +345,55 @@ MonoBehaviour:
   m_GameObject: {fileID: 2361870390903351042}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ba0cb657094502408f18da3d2a5c9af, type: 3}
+  m_Script: {fileID: 11500000, guid: 53fc20c993ecea14b987dd9467c82d1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gameEvent:
-    debugGameEvent: 1
+    debugGameEvent: 0
     onEventRaised:
       m_PersistentCalls:
         m_Calls: []
   raiseVector3:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5654680034324445335}
+        m_TargetAssemblyTypeName: FlyingSaucerMovementComponent, com.hypergnosys.player-controls
+        m_MethodName: OnMove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5654680034324445335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2361870390903351042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98c6e0fdcfcb2124a9976676a0f84b03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debugSaucerMove: 0
+  speed:
+    debugExternalizableProperty: 0
+    useExternalProperty: 0
+    localProperty:
+      value: 0
+      onValueChanged:
+        debugGameEvent: 0
+        onEventRaised:
+          m_PersistentCalls:
+            m_Calls: []
+    externalProperty:
+      referenceObject: {fileID: 0}
+  body: {fileID: 0}
 --- !u!1 &4301318614716701956
 GameObject:
   m_ObjectHideFlags: 0
@@ -365,6 +404,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4133897270921751096}
   - component: {fileID: 1264108367558320681}
+  - component: {fileID: 3829613845925828931}
   m_Layer: 0
   m_Name: Rotate
   m_TagString: Untagged
@@ -395,17 +435,68 @@ MonoBehaviour:
   m_GameObject: {fileID: 4301318614716701956}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb5cb7c8f16f75f4d91080c7fddaa1ae, type: 3}
+  m_Script: {fileID: 11500000, guid: c11622d8126b37845a4f67ce8a0d2c41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gameEvent:
-    debugGameEvent: 1
+    debugGameEvent: 0
     onEventRaised:
       m_PersistentCalls:
         m_Calls: []
   raiseVector3:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3829613845925828931}
+        m_TargetAssemblyTypeName: FlyingSaucerRotation, com.hypergnosys.player-controls
+        m_MethodName: OnRot
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3829613845925828931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4301318614716701956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc4ccfbb36b2618459c5b2ba91edf9fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debugSaucerRotation: 0
+  rotationSensitivity:
+    debugExternalizableProperty: 0
+    useExternalProperty: 0
+    localProperty:
+      value: 0
+      onValueChanged:
+        debugGameEvent: 0
+        onEventRaised:
+          m_PersistentCalls:
+            m_Calls: []
+    externalProperty:
+      referenceObject: {fileID: 0}
+  lookSensitivity:
+    debugExternalizableProperty: 0
+    useExternalProperty: 0
+    localProperty:
+      value: 0
+      onValueChanged:
+        debugGameEvent: 0
+        onEventRaised:
+          m_PersistentCalls:
+            m_Calls: []
+    externalProperty:
+      referenceObject: {fileID: 0}
+  invertY: 0
+  body: {fileID: 0}
 --- !u!1 &6901925956483572104
 GameObject:
   m_ObjectHideFlags: 0
@@ -520,6 +611,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1564641588499608054}
   - component: {fileID: 4414011384858500957}
+  - component: {fileID: 7404856611400335329}
   m_Layer: 0
   m_Name: Look
   m_TagString: Untagged
@@ -560,7 +652,58 @@ MonoBehaviour:
         m_Calls: []
   raiseVector2:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7404856611400335329}
+        m_TargetAssemblyTypeName: FlyingSaucerRotation, com.hypergnosys.player-controls
+        m_MethodName: OnLook
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &7404856611400335329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8770155447164131360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc4ccfbb36b2618459c5b2ba91edf9fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debugSaucerRotation: 0
+  rotationSensitivity:
+    debugExternalizableProperty: 0
+    useExternalProperty: 0
+    localProperty:
+      value: 0
+      onValueChanged:
+        debugGameEvent: 0
+        onEventRaised:
+          m_PersistentCalls:
+            m_Calls: []
+    externalProperty:
+      referenceObject: {fileID: 0}
+  lookSensitivity:
+    debugExternalizableProperty: 0
+    useExternalProperty: 0
+    localProperty:
+      value: 0
+      onValueChanged:
+        debugGameEvent: 0
+        onEventRaised:
+          m_PersistentCalls:
+            m_Calls: []
+    externalProperty:
+      referenceObject: {fileID: 0}
+  invertY: 0
+  body: {fileID: 0}
 --- !u!1 &8774163651112802165
 GameObject:
   m_ObjectHideFlags: 0
@@ -571,6 +714,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8388268591234295346}
   - component: {fileID: 5001476722942115455}
+  - component: {fileID: 1291491861153035618}
   m_Layer: 0
   m_Name: Boost
   m_TagString: Untagged
@@ -611,4 +755,41 @@ MonoBehaviour:
         m_Calls: []
   onPhaseChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1291491861153035618}
+        m_TargetAssemblyTypeName: Boost, com.hypergnosys.player-controls
+        m_MethodName: OnBoost
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1291491861153035618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8774163651112802165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a003c9525fbd9ca46b09fb57ebfe0abd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  multiplier: 2
+  speed:
+    debugExternalizableProperty: 0
+    useExternalProperty: 0
+    localProperty:
+      value: 0
+      onValueChanged:
+        debugGameEvent: 0
+        onEventRaised:
+          m_PersistentCalls:
+            m_Calls: []
+    externalProperty:
+      referenceObject: {fileID: 0}

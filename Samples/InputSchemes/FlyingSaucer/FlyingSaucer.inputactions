@@ -159,7 +159,7 @@
                 {
                     "name": "",
                     "id": "29cddcea-96c1-4560-9d77-c680497c62b9",
-                    "path": "<Pointer>/delta",
+                    "path": "<Mouse>/position",
                     "interactions": "",
                     "processors": "",
                     "groups": "KeyboardMouse",
