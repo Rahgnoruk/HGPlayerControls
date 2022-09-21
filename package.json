@@ -28,6 +28,9 @@
       "com.unity.cinemachine": "2.6.11"
     },
     "gitDependencies": {
-      "com.hypergnosys.core" : "https://github.com/Rahgnoruk/HGCodeBaseCore.git"
+      "com.hypergnosys.externalizable-property" : "https://github.com/Rahgnoruk/HGExternalizableProperty.git",
+      "com.hypergnosys.event-architecture" : "https://github.com/Rahgnoruk/HGEventArchitecture.git",
+      "com.hypergnosys.serialized-interface" : "https://github.com/Rahgnoruk/HGSerializedInterface.git",
+      "com.hypergnosys.null-object-pattern" : "https://github.com/Rahgnoruk/HGNullObjectPattern.git"
     }
   }

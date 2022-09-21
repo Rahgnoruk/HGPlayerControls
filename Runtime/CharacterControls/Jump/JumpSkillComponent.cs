@@ -1,4 +1,6 @@
-﻿using HyperGnosys.Core;
+﻿using HyperGnosys.ExternalizableProperty;
+using HyperGnosys.NullObjectPattern;
+using HyperGnosys.SerializedInterface;
 using UnityEngine;
 
 namespace HyperGnosys.Skills
@@ -19,7 +21,7 @@ namespace HyperGnosys.Skills
         [SerializeField] private ExternalizableLabeledProperty<bool> shouldJump = new ExternalizableLabeledProperty<bool>();
 
         [Space]
-        [SerializeField] private ExternalReference<IJumpSkillBehaviour> jumpBehaviour = new ExternalReference<IJumpSkillBehaviour>();
+        [SerializeField] private SerializedInterface<IJumpSkillBehaviour> jumpBehaviour = new SerializedInterface<IJumpSkillBehaviour>();
 
         private Rigidbody objectRigidBody;
         private Collider objectCollider;
@@ -38,10 +40,6 @@ namespace HyperGnosys.Skills
                 return;
             }
             objectRigidBody = objectThatJumps.GetComponent<Rigidbody>();
-            if (!objectRigidBody)
-            {
-                HGDebug.LogError($"El objeto a mover asignado en {transform.name} no tiene Rigidbody", debugJumpSkill);
-            }
         }
         void Awake()
         {
@@ -50,11 +48,6 @@ namespace HyperGnosys.Skills
                 objectRigidBody = objectThatJumps.GetComponent<Rigidbody>();
                 objectCollider = objectThatJumps.GetComponent<Collider>();
                 objectRigidBody.freezeRotation = true;
-            }
-            else
-            {
-                HGDebug.LogError("Rigidbody reference not ser in " + transform.name
-                    + " child of " + transform.parent?.name + " child of " + transform.parent?.name, debugJumpSkill);
             }
         }
         public void OnJump(bool isJumpInputDown)

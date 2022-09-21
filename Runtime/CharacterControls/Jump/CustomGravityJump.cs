@@ -1,4 +1,4 @@
-using HyperGnosys.Core;
+using HyperGnosys.ExternalizableProperty;
 using UnityEngine;
 
 namespace HyperGnosys.Skills

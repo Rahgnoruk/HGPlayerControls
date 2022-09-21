@@ -1,4 +1,4 @@
-﻿using HyperGnosys.Core;
+﻿using HyperGnosys.ExternalizableProperty;
 using UnityEngine;
 
 namespace HyperGnosys.Skills
@@ -51,23 +51,17 @@ namespace HyperGnosys.Skills
                 return;
             }
             objectRigidBody = objectToMove.GetComponent<Rigidbody>();
-            if (!objectRigidBody)
-            {
-                HGDebug.LogError($"El objeto a mover asignado en {transform.name} no tiene Rigidbody", debugRigidbodyMove);
-            }
         }
         private void Awake()
         {
             if (objectToMove == null)
             {
-                HGDebug.LogError("No se asigno el objeto a mover en " + transform.name, debugRigidbodyMove);
                 return;
             }
         }
         public void OnMove(Vector3 targetVelocityVector)
         {
             this.targetVelocityVector = targetVelocityVector;
-            HGDebug.Log("Vector de movimiento del Input: " + targetVelocityVector, debugRigidbodyMove);
         }
         public void FixedUpdate()
         {
@@ -77,7 +71,6 @@ namespace HyperGnosys.Skills
 
         public void Move(Vector3 targetVector)
         {
-            HGDebug.Log("TargetVector: " + targetVector, debugRigidbodyMove);
             bool targetIsStopping = targetVector.sqrMagnitude < 0.01;
             if (targetIsStopping)
             {
@@ -90,14 +83,11 @@ namespace HyperGnosys.Skills
             }
             if (HasControl)
             {
-                HGDebug.Log("Speed: " + speed.Value, debugRigidbodyMove);
                 targetVector *= speed.Value;
-                HGDebug.Log("Target Velocity times Speed: " + targetVector, debugRigidbodyMove);
                 if (moveInTransformsDirection.Value)
                 {
                     targetVector = VectorInWorldCoods(targetVector);
                 }
-                HGDebug.Log("Target Velocity after Transform Direction: " + targetVector, debugRigidbodyMove);
                 targetVelocityX.Value = targetVector.x;
                 targetVelocityZ.Value = targetVector.z;
 
@@ -121,12 +111,10 @@ namespace HyperGnosys.Skills
         {
             Vector3 currentVelocity = objectRigidBody.velocity;
             Vector3 velocityChange = targetVector - currentVelocity;
-            HGDebug.Log("Velocity Change: " + maxVelocityChange.Value, debugRigidbodyMove);
             velocityChange.x = Mathf.Clamp(velocityChange.x, -maxVelocityChange.Value, maxVelocityChange.Value);
             velocityChange.z = Mathf.Clamp(velocityChange.z, -maxVelocityChange.Value, maxVelocityChange.Value);
             velocityChange.y = 0;
             objectRigidBody.AddForce(velocityChange, ForceMode.VelocityChange);
-            HGDebug.Log("Rigidbody Velocity this Frame: " + objectRigidBody.velocity, debugRigidbodyMove);
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using HyperGnosys.Core;
+﻿using HyperGnosys.EventArchitecture;
 using UnityEngine.InputSystem;
 
 namespace HyperGnosys.Input

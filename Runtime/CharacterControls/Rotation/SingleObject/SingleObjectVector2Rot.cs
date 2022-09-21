@@ -1,5 +1,4 @@
-﻿using HyperGnosys.Core;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace HyperGnosys.Skills
 {
@@ -7,17 +6,14 @@ namespace HyperGnosys.Skills
     // behind by one frame.
     public class SingleObjectVector2Rot : ASingleObjectRot
     {
-        private void Awake()
+        protected override void Look(Vector2 rotate)
         {
             if (ObjectToRotate == null)
             {
-                HGDebug.LogError(transform.name + " no tiene el objeto a rotar asignado", Debugging);
+                Debug.LogError(transform.name + " no tiene el objeto a rotar asignado", this);
+                return;
             }
-        }
-
-        protected override void Look(Vector2 rotate)
-        {
-            if (rotate.sqrMagnitude < 0.01 || ObjectToRotate == null)
+            if (rotate.sqrMagnitude < 0.01)
             {
                 return;
             }

@@ -1,5 +1,4 @@
-﻿using HyperGnosys.Core;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class FlyingSaucerTilt : MonoBehaviour {
     [SerializeField] private bool debugSaucerTilt = false;
@@ -17,7 +16,6 @@ public class FlyingSaucerTilt : MonoBehaviour {
     }
     public void Tilt(Vector3 inputVector)
     {
-        HGDebug.Log("Vector de movimiento del Input: " + inputVector, debugSaucerTilt);
         this.inputVector = inputVector;
         increment = 0;
     }

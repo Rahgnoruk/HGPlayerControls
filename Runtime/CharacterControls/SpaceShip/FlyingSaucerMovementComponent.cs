@@ -1,4 +1,4 @@
-﻿using HyperGnosys.Core;
+﻿using HyperGnosys.ExternalizableProperty;
 using UnityEngine;
 public class FlyingSaucerMovementComponent : MonoBehaviour
 {
@@ -13,8 +13,6 @@ public class FlyingSaucerMovementComponent : MonoBehaviour
     }
     public void OnMove(Vector3 inputVector)
     {
-        HGDebug.Log("Vector de movimiento del Input: " + inputVector, debugSaucerMove);
-        HGDebug.Log("Speed: " + speed.Value, debugSaucerMove);
         this.inputVector = inputVector;
     }
     public void FixedUpdate()

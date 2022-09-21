@@ -16,10 +16,6 @@ namespace HyperGnosys.Skills
 
         private void Awake()
         {
-            if (XRotObject == null || YRotObject == null)
-            {
-                HGDebug.LogError(transform.name + " no tiene alguno de los objetos a rotar asignado", Debugging);
-            }
         }
 
 

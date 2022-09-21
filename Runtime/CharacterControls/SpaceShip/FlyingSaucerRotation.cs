@@ -1,5 +1,4 @@
-using HyperGnosys.Core;
-using System;
+using HyperGnosys.ExternalizableProperty;
 using UnityEngine;
 
 public class FlyingSaucerRotation : MonoBehaviour
@@ -24,14 +23,12 @@ public class FlyingSaucerRotation : MonoBehaviour
     }
     public void OnLook(Vector2 inputVector)
     {
-        HGDebug.Log("LookVector: " + inputVector, debugSaucerRotation);
         halfScreenWidth = Screen.width / 2;
         halfScreenHeight = Screen.height / 2;
         Vector2 screenCenter = new Vector2(halfScreenWidth, halfScreenHeight);
         lookVector = screenCenter - inputVector;
         ClampLookVector();
         lookVector = new Vector2(-lookVector.y, -lookVector.x);
-        HGDebug.Log("Processed Look Vector: " + lookVector, debugSaucerRotation);
     }
     private void ClampLookVector()
     {

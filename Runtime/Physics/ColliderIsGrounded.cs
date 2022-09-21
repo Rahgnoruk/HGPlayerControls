@@ -15,14 +15,13 @@ public static class ColliderIsGrounded
             for (float y = -zRange; y <= zRange; y += 0.1f)
             {
                 ray.direction = new Vector3(x, -1, y);
-                HGDebug.DrawRay(ray.origin, ray.direction * maxDistance, debug, Color.red);
+                if(debug) Debug.DrawRay(ray.origin, ray.direction * maxDistance, Color.red);
                 ///Si la desiredLayer es -1 se manda el raycast sin especificar la layer
                 ///para que choque contra todas.
                 if (ignoreLayer == -1)
                 {
                     if (Physics.Raycast(ray, out hitInfo, maxDistance))
                     {
-                        HGDebug.Log("ColliderIsGrounded ray hit " + hitInfo.transform.name, debug);
                         return true;
                     }
                 }
